@@ -1,9 +1,16 @@
+import createApolloClient from "@/apollo-client";
 import "@/styles/globals.css";
+import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const apolloClient = createApolloClient();
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />;
+    </ApolloProvider>
+  );
 }
 
 // Disabling SSR
