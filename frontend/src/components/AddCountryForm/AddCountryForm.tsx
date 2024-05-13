@@ -50,6 +50,8 @@ const AddCountryForm = () => {
           <label htmlFor="code">Code</label>
           <input
             required
+            minLength={2}
+            maxLength={2}
             name="code"
             type="code"
             onBlur={(e) => setFormData({ ...formData, code: e.target.value })}
