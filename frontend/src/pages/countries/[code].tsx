@@ -37,7 +37,9 @@ const ArticlePage = () => {
         <h1>
           {data.country.name} {data.country.emoji}
         </h1>
-        <p>Continent: {data.country.continent.name}</p>
+        {data.country.continent && (
+          <p>Continent: {data.country.continent.name}</p>
+        )}
         <p>Code: {data.country.code}</p>
       </div>
     </div>
