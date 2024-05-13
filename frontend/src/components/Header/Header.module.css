@@ -1,0 +1,10 @@
+.mainHeader{
+    text-align: center;
+    background-color: cornflowerblue;
+    margin: 0;
+    padding: 3rem;
+}
+
+.mainHeader a{
+    color: black;
+}

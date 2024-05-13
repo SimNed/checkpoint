@@ -23,17 +23,19 @@ const ContryList = () => {
     <ul className={styles.countryContainer}>
       {data &&
         data.countries &&
-        data.countries.map((country) => (
-          <li>
-            <a
-              href="#"
-              onClick={() => router.push(`/countries/${country.code}`)}
-            >
-              <p>{country.name}</p>
-              <p>{country.emoji}</p>
-            </a>
-          </li>
-        ))}
+        data.countries.map(
+          (country: { emoji: string; name: string; code: string }) => (
+            <li>
+              <a
+                href="#"
+                onClick={() => router.push(`/countries/${country.code}`)}
+              >
+                <p>{country.name}</p>
+                <p>{country.emoji}</p>
+              </a>
+            </li>
+          )
+        )}
     </ul>
   );
 };
