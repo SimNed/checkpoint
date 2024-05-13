@@ -31,6 +31,7 @@ const AddCountryForm = () => {
         <div>
           <label htmlFor="name">Name</label>
           <input
+            required
             name="name"
             type="text"
             onBlur={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -39,6 +40,7 @@ const AddCountryForm = () => {
         <div>
           <label htmlFor="emoji">Emoji</label>
           <input
+            required
             name="emoji"
             type="emoji"
             onBlur={(e) => setFormData({ ...formData, emoji: e.target.value })}
@@ -47,6 +49,8 @@ const AddCountryForm = () => {
         <div>
           <label htmlFor="code">Code</label>
           <input
+            required
+            size={2}
             name="code"
             type="code"
             onBlur={(e) => setFormData({ ...formData, code: e.target.value })}
