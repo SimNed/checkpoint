@@ -1,20 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./AddCountryForm.module.css";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+import { CREATE_COUNTRY, GET_COUNTRIES } from "@/queries/countriesQueries";
 
 const AddCountryForm = () => {
-  const CREATE_COUNTRY = gql`
-    mutation Mutation($data: NewCountryInput!) {
-      addCountry(data: $data) {
-        name
-        emoji
-        code
-      }
-    }
-  `;
   const [formData, setFormData] = useState({ name: "", emoji: "", code: "" });
 
-  const [addCountry, { loading, error }] = useMutation(CREATE_COUNTRY);
+  const [addCountry, { loading, error }] = useMutation(CREATE_COUNTRY, {
+    refetchQueries: [{ query: GET_COUNTRIES }],
+  });
 
   if (loading) return "Submitting...";
   if (error) return `Submission error! ${error.message}`;

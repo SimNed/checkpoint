@@ -1,18 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import styles from "./CountryList.module.css";
 import { useRouter } from "next/router";
+import { GET_COUNTRIES } from "@/queries/countriesQueries";
 
 const ContryList = () => {
-  const GET_COUNTRIES = gql`
-    query Countries {
-      countries {
-        emoji
-        name
-        code
-      }
-    }
-  `;
-
   const router = useRouter();
   const { loading, error, data } = useQuery(GET_COUNTRIES);
 

@@ -1,5 +1,5 @@
-import createApolloClient from "@/apollo-client";
 import Header from "@/components/Header/Header";
+import createApolloClient from "@/graphql/client";
 import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
