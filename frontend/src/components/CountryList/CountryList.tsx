@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import styles from "./CountryList.module.css";
+import { useRouter } from "next/router";
 
 const ContryList = () => {
   const GET_COUNTRIES = gql`
@@ -7,11 +8,13 @@ const ContryList = () => {
       countries {
         emoji
         name
+        code
       }
     }
   `;
 
-  const { loading, error, data } = useQuery<any>(GET_COUNTRIES);
+  const router = useRouter();
+  const { loading, error, data } = useQuery(GET_COUNTRIES);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
@@ -22,7 +25,10 @@ const ContryList = () => {
         data.countries &&
         data.countries.map((country) => (
           <li>
-            <a href="">
+            <a
+              href="#"
+              onClick={() => router.push(`/countries/${country.code}`)}
+            >
               <p>{country.name}</p>
               <p>{country.emoji}</p>
             </a>

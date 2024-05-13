@@ -1,4 +1,5 @@
 import createApolloClient from "@/apollo-client";
+import Header from "@/components/Header";
 import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
@@ -8,6 +9,7 @@ function App({ Component, pageProps }: AppProps) {
   const apolloClient = createApolloClient();
   return (
     <ApolloProvider client={apolloClient}>
+      <Header />
       <Component {...pageProps} />;
     </ApolloProvider>
   );
