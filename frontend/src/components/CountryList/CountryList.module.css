@@ -8,9 +8,18 @@
     gap: 1rem;
 }
 
-.countryContainer > li {
+.countryContainer > li > a {
+    display: block;
     width: 120px;
-    border: 1px solid grey;
     padding: 1rem;
+    border: 1px solid grey;
+    background-color: white;
+    color: black;
     text-align: center;
+    text-decoration: none;
+    transition: 0.2s ease all;
+}
+
+.countryContainer > li > a:hover {
+    background-color: gainsboro;
 }

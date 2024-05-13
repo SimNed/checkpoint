@@ -31,8 +31,10 @@ const ContryList = () => {
     <ul className={styles.countryContainer}>
       {countries.map((country) => (
         <li>
-          <p>{country.name}</p>
-          <p>{country.emoji}</p>
+          <a href="">
+            <p>{country.name}</p>
+            <p>{country.emoji}</p>
+          </a>
         </li>
       ))}
     </ul>

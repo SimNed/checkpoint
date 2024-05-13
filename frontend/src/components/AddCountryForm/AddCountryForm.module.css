@@ -1,0 +1,23 @@
+.addCountryForm {
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid grey;
+    text-align: right;
+}
+
+.addCountryFormInputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.addCountryForm button{
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.addCountryForm label {
+    margin-right: 12px;
+}
